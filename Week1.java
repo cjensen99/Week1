@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Week1 {
 
 	public static void main(String[] args) {
+		//part 1
 		int[] random = new int[] {
 				39,46,10,37,33,4,30,26,14,19,29,6,43,8,35,50,13,25,17,48,
 				28,3,41,34,36,38,49,16,45,2,40,15,24,7,5,9,20,1,42,44,21,
@@ -22,8 +23,9 @@ public class Week1 {
 		for(int i = 0; i < random.length; i++) {
 			if(num == random[i]) System.out.println("Your number: " + num + " is found in the index: " + i + " of the array.");
 		}
+		//finished with part 1
 		
-		
+		// starting part2/3
 		String[] customers = new String[] {
 				"Amy Garrison","Braydon Beil","Bluebell Nguyen","Konrad Sears","Cheryl Salas","Rosanna Meyer",
 				"Karis Haley","Enzo Donaldson","Catrina Griffiths","Gregor Payne","Jermaine Jordan","Zakariya Goulding",
@@ -49,7 +51,7 @@ public class Week1 {
 					System.out.print("Please enter the account number: ");
 					int account = scnr.nextInt();
 					int index = returnAccountIndex(payments, account);
-					if(index == 0) {
+					if(index == -1) {
 						System.out.println("Account number not found.");
 						break;
 					}
@@ -71,7 +73,7 @@ public class Week1 {
 							printCustomerPaymentHistory(customers, payments, i);
 							containsZero = false;
 						}
-					} 
+					}
 					printReportBottom();
 					break;
 				case 3:
@@ -89,6 +91,7 @@ public class Week1 {
 					printReportBottom();
 					break;
 				case 4:
+					System.out.println("Goodbye.");
 					stop = true;
 					break;
 				default:
@@ -106,7 +109,7 @@ public class Week1 {
 			}
 		}
 		//if account number isn't found
-		return 0;
+		return -1;
 	}
 	
 	private static void printReportHeader() {
